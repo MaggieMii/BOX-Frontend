@@ -1,0 +1,9 @@
+{
+  "miniprogramRoot": "./",
+  "projectname": "BOX-Frontend",
+  "appid": "testAppId",
+  "setting": {
+    "es6": false,
+    "minified": false
+  }
+}

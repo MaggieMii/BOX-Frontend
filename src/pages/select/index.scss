@@ -1,0 +1,136 @@
+.box1{
+    position: relative;
+    left: 30rpx;
+    top: 80rpx;
+    width: 690rpx;
+    height: 360rpx;
+    opacity: 1;
+    border-radius: 20rpx;
+    background: rgba(255, 255, 255, 1);
+    border: 2rpx solid rgba(255, 255, 255, 1);
+    box-shadow: 0rpx 4rpx 8rpx  rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.index{
+    background-color: #FFE896;
+    width: 100vw;
+    height: 100vh;
+}
+
+.box1 .font1{
+    opacity: 1;
+    /** 文本1 */
+    font-size: 48rpx;
+    font-weight: 700;
+    letter-spacing: 0rpx;
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+    vertical-align: top;
+    margin-bottom: 35rpx;
+}
+
+.box1 View{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 72rpx;
+    top: 386rpx;
+    width: 614rpx;
+    height: 158rpx;
+    opacity: 1;
+    border-radius: 20rpx;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(255, 235, 59, 1) 0%, rgba(255, 235, 59, 0) 100%)
+}
+
+.box1 View .font{
+    font-size: 48rpx;
+    font-weight:600;
+    color: rgba(0, 0, 0, 1);
+}
+
+.box2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 320rpx;
+    height: 320rpx;
+    opacity: 1;
+    border-radius: 20rpx;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0rpx 4rpx 8rpx  rgba(0, 0, 0, 0.25);
+    border: 5px solid transparent;
+}
+
+.box2 Image{
+    
+    margin-top: 25rpx;
+}
+
+.box2 text{
+    white-space: nowrap;
+    opacity: 1;
+    /** 文本1 */
+    font-size: 50rpx;
+    font-weight: 500;
+    letter-spacing: 0rpx;
+    line-height: 68.6rpx;
+    color: rgba(166, 166, 166, 1);
+    text-align: center;
+    vertical-align: top;
+    
+}
+
+.leftbox{
+    position: absolute;
+    left: 30rpx;
+    top: 600rpx;
+}
+
+.leftbox Image{
+    width: 114.2rpx;
+    height: 132rpx;
+}
+
+.rightbox{
+    position: absolute;
+    left: 400rpx;
+    top: 600rpx;
+}
+
+.rightbox Image{
+    width: 148rpx;
+    height: 131.01rpx;
+}
+
+.finishSelect{
+    position: absolute;
+    left: 180rpx;
+    top: 1068rpx;
+    width: 400rpx;
+    height: 130rpx;
+    opacity: 1;
+    border-radius: 40rpx;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0rpx 4rpx 8rpx  rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 40rpx;
+    font-weight: 700;
+    letter-spacing: 0rpx;
+    line-height: 54.88rpx;
+    color: rgba(0, 0, 0, 1);
+    text-align: center;
+}
+
+.active{
+    border: 5px solid rgba(165, 214, 63, 1);
+}
+
+
