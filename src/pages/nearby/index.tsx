@@ -8,7 +8,7 @@ import link from '../../assets/images/nearby/link.png'
 import onlink from '../../assets/images/nearby/onlink.png'
 import img1 from '../../assets/images/nearby/img1.png'
 import { useState } from 'react'
-import { AtAvatar } from 'taro-ui'
+import { AtAvatar,AtNavBar } from 'taro-ui'
 
 export default function Index() {
 
@@ -101,15 +101,18 @@ export default function Index() {
   return (
   <>
     <View className='index'>
-      <View className='navbar'>
-        <Image src={search}></Image>
-        <Text className='title'>与你的食光</Text>
+      <View style={'position:sticky; top:0;z-index:999;'}>
+      <AtNavBar
+        color='#000'
+        leftIconType = 'search'
+        title='与你的食光'
+        className='bar'
+      />
         <View className='select'>
           <View className={selectNumber===1?'isClick':''} onClick={()=>changeSelect(1)}>推荐</View>
           <View className={selectNumber===2?'isClick':''} onClick={()=>changeSelect(2)}>热门</View>
           <View className={selectNumber===3?'isClick':''} onClick={()=>changeSelect(3)}>本地</View>
         </View>
-      </View>
       <View className='hot'>
         <View className='hottest'>最热话题</View>
         {
@@ -120,6 +123,8 @@ export default function Index() {
         <View>
           <Image src={more}></Image>
         </View>
+      </View>
+   
       </View>
       <View className='posts-display'>
          {/* <View className='no-content'>暂时没有更多内容~</View> */}
@@ -132,7 +137,7 @@ export default function Index() {
               <View className='post-title'>{item.title}</View>
               <View className='user'>
                 {/* <AtAvatar className='avatar' circle image={item.look}></AtAvatar> */}
-                <Image src={item.look} className='avatar'></Image>
+                {<Image src={item.look} className='avatar'></Image>}
                 <View>{item.name}</View>
                 <View className='level'>LV{item.level}</View>
                 <View className='like' onClick={()=>clickIt(item)}>

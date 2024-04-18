@@ -5,25 +5,25 @@
     height: 100vh;
     width: 100vw;
 }
-.navbar{
-    top: 0;
-    padding-top: env(safe-area-inset-top);
-    background: hsla(54, 100%, 62%, 1);
-    height: 150rpx;
-    width: 100%;
-    position: sticky;
-    text-align: center;
-    justify-items: center;
-    z-index: 9999;
-}
+// .navbar{
+//     top: 0;
+//     padding-top: env(safe-area-inset-top);
+//     background: hsla(54, 100%, 62%, 1);
+//     height: 150rpx;
+//     width: 100%;
+//     position: sticky;
+//     text-align: center;
+//     justify-items: center;
+//     z-index: 9999;
+// }
 
-.navbar Image{
-    width: 50rpx;
-    height: 50rpx;
-    position: absolute;
-    left: 50rpx;
-    top: 60rpx;
-}
+// .navbar Image{
+//     width: 50rpx;
+//     height: 50rpx;
+//     position: absolute;
+//     left: 50rpx;
+//     top: 60rpx;
+// }
 
 .title{
     font-size: large;
@@ -37,18 +37,20 @@
 }
 
 .select{
-    position: absolute;
-    bottom: 0;
+    // position: absolute;
+    // bottom: 0;
+    background-color: rgba(255, 235, 59, 0.4);
     display: flex;
-    font-size: 22rpx;
-    width: 50%;
-    left: 25%;
-    justify-content: space-between;
+    font-size: 32px;
+    font-weight: 400;
+    justify-content: center;
     color: #999999;
 }
 
 .select View{
-    padding: 0 10rpx;
+    text-align: center;
+    width: 100rpx;
+    padding: 8rpx 25rpx;
     // border-bottom: 1.5px solid hsla(54, 100%, 62%, 0.4);
 }
 
@@ -60,8 +62,8 @@
 .hot{
     width: 100%;
     padding: 10rpx 10rpx;
-    position: sticky;
-    top: 150rpx;
+    // position: sticky;
+    // top: 150rpx;
     background: #FFFFFF;
     display: flex;
     justify-content: space-between;
@@ -191,4 +193,14 @@
 .like-number{
     float: right;
     font-weight: bold;
+}
+
+//顶部导航栏css
+.at-nav-bar{
+    padding-top: env(safe-area-inset-top);
+    background: rgba(255, 235, 59, 0.4);
+}
+
+.at-nav-bar::after{
+    border: 0 solid transparent;
 }

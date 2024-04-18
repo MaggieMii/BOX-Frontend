@@ -1,9 +1,9 @@
 export default defineAppConfig({
   pages: [
-    'pages/select/index',
-    'pages/index/index',
-    'pages/affirm/index',
-    'pages/success/index',
+    // 'pages/select/index',
+    // 'pages/index/index',
+    // 'pages/affirm/index',
+    // 'pages/success/index',
     'pages/nearby/index',
     'pages/store/index',
     'pages/order/index',
