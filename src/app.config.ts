@@ -4,18 +4,19 @@ export default defineAppConfig({
     'pages/index/index',
     'pages/affirm/index',
     'pages/success/index',
-    'pages/placeOrder/index',
-    'pages/store/index',
     'pages/nearby/index',
+    'pages/store/index',
     'pages/order/index',
     'pages/mine/index',
-    
+    'pages/placeOrder/index',
+ 
   ],
   window: {
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
     navigationBarTitleText: 'WeChat',
-    navigationBarTextStyle: 'black'
+    navigationBarTextStyle: 'black',
+    navigationStyle:'custom'
   },
   tabBar: {
     backgroundColor:"#fff",
@@ -30,13 +31,13 @@ export default defineAppConfig({
       },
       {
         pagePath: "pages/nearby/index",
-        text: "订单",
+        text: "附近",
         iconPath: "./assets/images/附近.png",
         selectedIconPath: "./assets/images/附近.png"
       },
       {
         pagePath: "pages/order/index",
-        text: "附近",
+        text: "订单",
         iconPath: "./assets/images/订单.png",
         selectedIconPath: "./assets/images/订单.png"
       },
