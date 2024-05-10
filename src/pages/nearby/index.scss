@@ -1,36 +1,38 @@
 .index{
-    background: #FFFEF2;
+    background: #fffef2;
     // background: red;
     overflow: visible;
     height: 100vh;
     width: 100vw;
 }
-.navbar{
+
+.navbar {
     top: 0;
     padding-top: env(safe-area-inset-top);
-    background: hsla(54, 100%, 62%, 1);
-    height: 150rpx;
+    background: #fff6a4;
+    opacity: 1;
+    height: 60px; /* 使用px单位 */
     width: 100%;
     position: sticky;
     text-align: center;
-    justify-items: center;
-    z-index: 9999;
-}
+    z-index: 10000; /* 调整z-index值 */
+    height: 220rpx;
+  }
 
 .navbar Image{
     width: 50rpx;
     height: 50rpx;
     position: absolute;
     left: 50rpx;
-    top: 60rpx;
+    top: 80rpx;
 }
 
 .title{
     font-size: large;
     color: black;
-    font-size: 32rpx;
+    font-size: 40rpx;
     font-weight: 400;
-    top: 60rpx;
+    top: 80rpx;
     letter-spacing: 0.5vw;
     position: relative;
     z-index: 9999;
@@ -40,7 +42,7 @@
     position: absolute;
     bottom: 0;
     display: flex;
-    font-size: 22rpx;
+    font-size: 32rpx;
     width: 50%;
     left: 25%;
     justify-content: space-between;
@@ -57,23 +59,30 @@
     border-bottom: 8rpx solid #FFFB00;
 }
 
+.show{
+    position: absolute;
+    height: 85vh;
+    top: 218rpx;
+    width: 100vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 .hot{
     width: 100%;
     padding: 10rpx 10rpx;
-    position: sticky;
-    top: 150rpx;
+    position: relative;
     background: #FFFFFF;
     display: flex;
     justify-content: space-between;
     font-size: 25rpx;
     height: 30rpx;
     line-height: 30rpx;
-    z-index: 9999999;
 }
 
 .hottest{
     color: black;
-    font-size: 30rpx;
+    font-size: 26rpx;
 }
 
 .hot-item{
@@ -86,8 +95,8 @@
     position: relative;
     top: -10prx;
     left: -10rpx;
-    width: 20rpx;
-    height: 30rpx;
+    width: 25.53rpx;
+    height: 38.47rpx;
 }
 
 .posts-display{
@@ -114,27 +123,29 @@
 .post{
   margin: 10rpx 0;
   width: 46vw;
+  height: auto;
   overflow: hidden;
   background: #FFFFFF;
-  border-radius: 15rpx;
+  border-radius: 20rpx;
 }
 
 .showImage {
     width: 46vw;
     height: auto;
-    object-fit: contain;
+    // object-fit: cover;
   }
 
 .showImage Image{
     width: 46vw;
+    // height: auto;
 }
 
 .post-title {
     width: 100%;
     padding-bottom: 10rpx;
     margin: 15rpx 15rpx 0rpx 15rpx;
-    letter-spacing: -0.2vw;
-    font-size: 27rpx;
+    font-size: 25rpx;
+    position: relative;
     font-weight: bold;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -146,16 +157,16 @@
     display: flex;
     height: 40rpx;
     line-height: 40rpx;
-    font-size: 18rpx;
+    font-size: 16rpx;
     padding: 15rpx;
     font-weight: 400;
 }
 
 .avatar{
-    height: 30rpx;
-    width: 30rpx;
+    width: 40rpx;
+    height: 40rpx;
     padding: 0;
-    border-radius: 15rpx;
+    border-radius: 20rpx;
     margin-right: 8rpx;
 }
 
@@ -165,7 +176,7 @@
 
 .level{
     position: relative;
-    padding-left: 10rpx;
+    padding-left: 15rpx;
 }
 
 .like{
@@ -175,20 +186,21 @@
 .link{
     position: relative;
     top: 8rpx;
-    width: 30rpx;
-    height: 30rpx;
+    width: 31.26rpx;
+    height: 29rpx;
     margin-left: 10rpx;
-}
-
-.img1{
-    width: 8rpx;
-    height: 8rpx;
-    position: relative;
-    left: -26rpx;
-    top: -10rpx;
 }
 
 .like-number{
     float: right;
     font-weight: bold;
+}
+
+.publish{
+    position: fixed;
+    top: 80%;
+    z-index: 999999;
+    left: 80%;
+    width: 124rpx;
+    height: 124rpx;
 }
