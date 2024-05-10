@@ -11,6 +11,7 @@ import like from '../../assets/images/nearby/link.png'
 import onlike from '../../assets/images/nearby/onlink.png'
 import commentimg from '../../assets/images/nearby/comment.png'
 import { useState } from 'react'
+import Taro from '@tarojs/taro'
 
 function TabBar(){
   const initialValue = "快来发表评论吧~"
@@ -52,7 +53,7 @@ export default function Index() {
   return (
     <View className='index'>
       <View className='navbar'>
-        <Image src={back} className='back'></Image>
+        <Image src={back} className='back' onClick={()=>Taro.navigateBack()}></Image>
         <Image src={home} className='home'></Image>
           <Text>详情</Text>
       </View>

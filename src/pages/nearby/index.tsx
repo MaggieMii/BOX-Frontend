@@ -10,6 +10,7 @@ import onlink from '../../assets/images/nearby/onlink.png'
 import publish from '../../assets/images/nearby/publish.png'
 
 import { useState } from 'react'
+import { AtNavBar } from 'taro-ui'
 
 export default function Index() {
 
@@ -120,6 +121,13 @@ export default function Index() {
   return (
   <>
     <View className='index'>
+      {/* <View style={'position:sticky; top:0;z-index:999;'}> */}
+      {/* <AtNavBar
+        color='#000'
+        leftIconType = 'search'
+        title='与你的食光'
+        className='bar'
+      /> */}
       <View className='navbar'>
         <Image src={search} onClick={()=>toSearch()}></Image>
         <Text className='title'>与你的食光</Text>
@@ -141,17 +149,19 @@ export default function Index() {
           <Image src={more}></Image>
         </View>
       </View>
+   
+      </View>
       <View className='posts-display'>
          {postList.length > 0 ?
           postList.map(item=>(
-            <View className='post' onClick={()=>toDetails()}>
-              <View className='showImage'>
+            <View className='post'>
+              <View className='showImage' onClick={()=>toDetails()}>
                 <Image src={item.image}></Image>
               </View>
               <View className='post-title'>{item.title}</View>
               <View className='user'>
                 {/* <AtAvatar className='avatar' circle image={item.look}></AtAvatar> */}
-                <Image src={item.look} className='avatar'></Image>
+                {<Image src={item.look} className='avatar'></Image>}
                 <View>{item.name}</View>
                 <View className='level'>LV{item.level}</View>
                 <View className='like' onClick={()=>clickIt(item)}>
@@ -166,7 +176,6 @@ export default function Index() {
       </View>
       <Image src={publish} className='publish' onClick={()=>toPublish()}></Image>
       </View>
-    </View>
   </>
   )
 }
