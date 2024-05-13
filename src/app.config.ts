@@ -4,10 +4,10 @@ export default defineAppConfig({
     // 'pages/index/index',
     // 'pages/affirm/index',
     // 'pages/success/index',
-    'pages/nearbyDetail/index',
-    'pages/nearby/index',
-
     'pages/nearbySearch/index',
+    'pages/nearby/index',
+    
+    'pages/nearbyDetail/index',
     'pages/nearbyPublish/index',
     'pages/store/index',
     'pages/order/index',

@@ -19,7 +19,7 @@ export default function Index() {
   })
   const [selectNumber,setSelectNumber] = useState<number>(1);
 
-  const clickIt = (item) => {
+  const clickIt = (item:any) => {
     // 使用 map 方法更新 postList 数组中相应元素的 isClick 属性
     setPostList(postList.map(postItem => {
       if (postItem === item) {
