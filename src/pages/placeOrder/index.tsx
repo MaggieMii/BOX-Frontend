@@ -7,6 +7,8 @@ import { AtInputNumber } from 'taro-ui'
 import storePic from '../../assets/images/R-C.jpg'
 import img1 from '../../assets/images/img1.png'
 import img2 from '../../assets/images/img2.png'
+import decrease from '../../assets/images/decrease.png'
+import increase from '../../assets/images/increase.png'
 
 import Taro from '@tarojs/taro';
 
@@ -23,14 +25,19 @@ export default function Index() {
   const price = 11.9;
 
   const handleChange = (value: number) => {
-    setQuantity(value);
-    console.log(value);
-    setTotal(price * value); // 更新 total 状态
+    const newValue = value + quantity;
+    if(newValue >= 0){
+      setQuantity(newValue);
+      console.log(value);
+      setTotal(price * newValue); // 更新 total 状态
+    }
+   
   }
 
   const handleClick = () =>{
+    Taro.preload({ test: '这是传递的数据' })
     Taro.navigateTo({
-      url:'/pages/affirm/index'
+      url:'/pages/affirm/index?id=1'
     })
   }
 
@@ -91,17 +98,15 @@ const Item: React.FC<ItemProps> = ({ imageUri, text1, text2, text3, text4, price
         <Text className='text4'>{text4}</Text>
       </View>
       <View className='float'>
+        
         <Text  className='price'>￥{price}</Text>
+
         <View className='quantity'>
-        <AtInputNumber
-        type='number'
-        className='input'
-        min={0}
-        max={10}
-        step={1}
-        value={quantity}
-        onChange={handleChange}
-      />
+        <View className='inputNumber'>
+          <Image src={decrease} onClick={()=>{handleChange(-1)}}></Image>
+          {quantity}
+          <Image src={increase} style={'padding-right:0;'} onClick={()=>{handleChange(1)}}></Image>
+        </View>
         </View>
       </View>
     </View>
