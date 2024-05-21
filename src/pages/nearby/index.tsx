@@ -1,23 +1,25 @@
 import { View, Text, Image } from '@tarojs/components'
-import { useLoad } from '@tarojs/taro'
+import Taro, { useLoad } from '@tarojs/taro'
 import './index.scss'
 import search from '../../assets/images/nearby/search.png'
 import more from '../../assets/images/nearby/more.png'
 
 import link from '../../assets/images/nearby/link.png'
 import onlink from '../../assets/images/nearby/onlink.png'
-import img1 from '../../assets/images/nearby/img1.png'
+
+import publish from '../../assets/images/nearby/publish.png'
+
 import { useState } from 'react'
-import { AtAvatar,AtNavBar } from 'taro-ui'
+import { AtNavBar } from 'taro-ui'
 
 export default function Index() {
 
   useLoad(() => {
     console.log('Page loaded.')
   })
-  const [selectNumber,setSelectNumber] = useState(1);
+  const [selectNumber,setSelectNumber] = useState<number>(1);
 
-  const clickIt = (item) => {
+  const clickIt = (item:any) => {
     // 使用 map 方法更新 postList 数组中相应元素的 isClick 属性
     setPostList(postList.map(postItem => {
       if (postItem === item) {
@@ -98,21 +100,44 @@ export default function Index() {
     }
   ]);
 
+  const toDetails = ()=>{
+    Taro.navigateTo({
+      url:`/pages/nearbyDetail/index`
+    })
+  }
+
+  const toSearch = ()=>{
+    Taro.navigateTo({
+      url:`/pages/nearbySearch/index`
+    })
+  }
+
+  const toPublish = ()=>{
+    Taro.navigateTo({
+      url:`/pages/nearbyPublish/index`
+    })
+  }
+
   return (
   <>
     <View className='index'>
-      <View style={'position:sticky; top:0;z-index:999;'}>
-      <AtNavBar
+      {/* <View style={'position:sticky; top:0;z-index:999;'}> */}
+      {/* <AtNavBar
         color='#000'
         leftIconType = 'search'
         title='与你的食光'
         className='bar'
-      />
+      /> */}
+      <View className='navbar'>
+        <Image src={search} onClick={()=>toSearch()}></Image>
+        <Text className='title'>与你的食光</Text>
         <View className='select'>
           <View className={selectNumber===1?'isClick':''} onClick={()=>changeSelect(1)}>推荐</View>
           <View className={selectNumber===2?'isClick':''} onClick={()=>changeSelect(2)}>热门</View>
           <View className={selectNumber===3?'isClick':''} onClick={()=>changeSelect(3)}>本地</View>
         </View>
+      </View>
+      <View className='show'>
       <View className='hot'>
         <View className='hottest'>最热话题</View>
         {
@@ -127,11 +152,10 @@ export default function Index() {
    
       </View>
       <View className='posts-display'>
-         {/* <View className='no-content'>暂时没有更多内容~</View> */}
-         {
+         {postList.length > 0 ?
           postList.map(item=>(
             <View className='post'>
-              <View className='showImage'>
+              <View className='showImage' onClick={()=>toDetails()}>
                 <Image src={item.image}></Image>
               </View>
               <View className='post-title'>{item.title}</View>
@@ -141,16 +165,17 @@ export default function Index() {
                 <View>{item.name}</View>
                 <View className='level'>LV{item.level}</View>
                 <View className='like' onClick={()=>clickIt(item)}>
-                  <Image className='link' src={item.isClick?onlink:link}></Image>
-                  <Image className='img1' src={img1}></Image>
+                  <Image className='link' src={item.isClick?onlink:link} ></Image>
                 </View>
                 <View className='like-number'>{item.like}</View>
               </View>
             </View>
           ))
+          :<View className='no-content'>暂时没有更多内容~</View>
          }
       </View>
-    </View>
+      <Image src={publish} className='publish' onClick={()=>toPublish()}></Image>
+      </View>
   </>
   )
 }

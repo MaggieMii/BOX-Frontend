@@ -1,0 +1,123 @@
+.at-nav-bar{
+    padding-top: env(safe-area-inset-top);
+    background: rgba(255, 235, 59, 0.4);
+}
+
+.at-nav-bar::after{
+    border: 0 solid transparent;
+}
+
+.index{
+    background: #fffef2;
+    // background: red;
+    overflow: visible;
+    height: 100vh;
+    width: 100vw;
+}
+
+.at-search-bar{
+    background-color:rgba(255, 235, 59, 0) ;
+    border: none;
+}
+
+.navbar {
+    top: 0;
+    padding-top: env(safe-area-inset-top);
+    background: #fff6a4;
+    opacity: 1;
+    height: 130rpx;
+    width: 100%;
+    position: sticky;
+    text-align: center;
+    z-index: 10000; /* 调整z-index值 */
+    height: 220rpx;
+
+    .back Image{
+            width: 40rpx;
+            height: 60rpx;
+            position: fixed;
+            top: 95rpx;
+            left: 30rpx;
+    }
+
+    .search{
+        display: flex;
+
+        .input{
+            position: fixed;
+            width: 80vw;
+            left: 30rpx;
+            top: 150rpx;
+            height: 52rpx;
+            border-radius: 40rpx;
+            background: rgba(255, 255, 255, 1);
+            border: 3rpx solid rgba(255, 235, 59, 0.8);
+    
+            Image{
+                width: 50rpx;
+                height: 50rpx;
+                float: left;
+                transform: translate(18rpx,15rpx);
+            }
+    
+            Input{
+                float: left;
+                width: 88%;
+                transform: translateY(5rpx);
+                // background: red;
+            }
+        }
+    
+        .button{
+            top:160rpx;
+            letter-spacing: 5rpx;
+            font-size: 28rpx;
+            font-weight: 400;
+            position: fixed;
+            right: 15rpx;
+            width: 13%;
+        }
+    }
+  }
+
+@mixin search-title (){
+    font-size: 28rpx;
+    font-weight: 400;
+    letter-spacing: 0rpx;
+    color: rgba(128, 128, 128, 1);
+}
+
+.hot{
+    position: relative;
+    margin: 30rpx;
+
+    .hot-search{
+        @include search-title;
+    }
+}
+
+.content{
+    display: flex;
+}
+
+.block{
+    margin: 15rpx 30rpx 15rpx 0;
+    padding: 0 30rpx;
+    width: auto;
+    line-height: 44rpx;
+    font-size: 24rpx;
+    font-weight: 400;
+    color: rgba(56, 56, 56, 1);
+    height: 44rpx;
+    border-radius: 20rpx;
+    background: rgba(255, 255, 255, 1);
+    border: 2rpx solid rgba(255, 235, 59, 1);
+}
+
+.history{
+    position: relative;
+    margin: 30rpx;
+    .history-search{
+        @include search-title;
+    }
+}
