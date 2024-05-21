@@ -1,15 +1,19 @@
 export default defineAppConfig({
   pages: [
-    'pages/select/index',
-    'pages/placeOrder/index',
-    'pages/index/index',
-    'pages/affirm/index',
-    'pages/success/index',
-    
-    'pages/nearby/index',
-    'pages/store/index',
+    // 'pages/select/index',
+    // 'pages/index/index',
+    // 'pages/affirm/index',
+    // 'pages/success/index',
     'pages/order/index',
-    'pages/mine/index'
+    'pages/nearby/index',
+    'pages/nearbySearch/index',
+    'pages/nearbyDetail/index',
+    'pages/nearbyPublish/index',
+    'pages/store/index',
+ 
+    'pages/mine/index',
+    'pages/placeOrder/index',
+ 
   ],
   window: {
     backgroundTextStyle: 'light',
